@@ -42,13 +42,9 @@ jobs:
       run: terraform fmt -no-color -check
       continue-on-error: true
 
-    - name: debug
-      run: env && exit 1
-
     - name: Terraform Init
       id: init
-      run: terraform init -no-color \
-            -backend-config="key=${{ env.GITHUB_REPOSITORY }}/terraform.tfstate"
+      run: terraform init -no-color -backend-config="key=$GITHUB_REPOSITORY/terraform.tfstate"
     
     - name: Terraform Validate
       id: validate
