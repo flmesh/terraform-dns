@@ -53,7 +53,7 @@ jobs:
     - name: Terraform Plan
       id: plan
       env:
-        TF_GH_ACTION_ROLE: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
+        TF_VAR_gh_action_role: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
       run: terraform plan -out .planfile
 
     - name: Post PR comment
@@ -71,5 +71,5 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       env:
-        TF_GH_ACTION_ROLE: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
+        TF_VAR_gh_action_role: ${{ secrets.AWS_GITHUB_ROLE_ARN }}
       run: terraform apply -no-color -auto-approve .planfile
