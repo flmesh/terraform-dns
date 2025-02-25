@@ -1,2 +1,2 @@
 # terraform-dns
-DNS Terrraform Infrastructure as Code
+DNS Terraform Infrastructure as Code
