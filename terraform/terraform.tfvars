@@ -6,6 +6,6 @@ stage = "prod"
 
 name = "dns"
 
-domain_name = "meshmapfl.com"
+domain_name = "areyoumeshingwith.us"
 
-comment = "Florida Meshtastic"
+comment = "Florida Mesh"
